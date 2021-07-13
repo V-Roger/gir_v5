@@ -1,10 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import PerfectScrollbar from 'react-perfect-scrollbar'
 import styles from '../styles/Gallery.module.scss'
-import { attributes, react as GalleryContent } from '../content/gallery.md';
+import 'react-perfect-scrollbar/dist/css/styles.css'
+import { attributes, react as GalleryContent } from '../content/gallery.md'
 
 export default function Home() {
-  const { images } = attributes;
+  const { images, title } = attributes;
 
   return (
     <div className={styles.container}>
@@ -16,10 +18,17 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <header className={styles.header}>
+          <h1>{ title }</h1>
+        </header>
+        <PerfectScrollbar className={styles.gallery}>
         {
-          images.map((image: { id: string; src: string; alt: string; }) => <Image className={styles['grid-item']} key={image.id} src={image.src} alt={image.alt} width={800} height={800} objectFit="contain" />)
+          images.map((image: { id: string; src: string; alt: string; }) => <div className={styles['photo']} key={image.id}><Image src={image.src} alt={image.alt} width={800} height={800} objectFit="contain" /></div>)
         }
-        <GalleryContent className={styles.content}/>
+        </PerfectScrollbar>
+        <section className={styles.content}>
+          <GalleryContent />
+        </section>
       </main>
 
       <footer className={styles.footer}>

@@ -1,5 +1,5 @@
 ---
-title: Awesome kitties
+title: Gallery
 date: 2019-03-17T19:31:20.591Z
 images:
   - src: /img/5ce2682135e9e20190317_038.jpg
@@ -21,6 +21,8 @@ images:
     id: foo
     alt: foo
 ---
-Welcome to my awesome page about cats of the internet.
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores a assumenda reprehenderit architecto voluptates officiis magnam, at quae unde commodi dolorem consequuntur laudantium cumque sint quis impedit in mollitia asperiores.
 
-This page is built with NextJS, and content is managed in Netlify CMS
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores a assumenda reprehenderit architecto voluptates officiis magnam, at quae unde commodi dolorem consequuntur laudantium cumque sint quis impedit in mollitia asperiores.
+
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores a assumenda reprehenderit architecto voluptates officiis magnam, at quae unde commodi dolorem consequuntur laudantium cumque sint quis impedit in mollitia asperiores.
