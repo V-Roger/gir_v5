@@ -3,7 +3,7 @@ import Image from 'next/image'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import styles from '../styles/Gallery.module.scss'
 import 'react-perfect-scrollbar/dist/css/styles.css'
-import { attributes, react as GalleryContent } from '../content/oneroll.md'
+import { attributes, react as GalleryContent } from '../content/galleries/oneroll.md'
 
 export default function Home() {
   const { images, title, exhibitions } = attributes;
