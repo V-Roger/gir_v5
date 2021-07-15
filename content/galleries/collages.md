@@ -1,6 +1,16 @@
 ---
 title: Collages
 date: 2021-07-15T12:09:52.579Z
+exhibitions:
+  - place: Le Bieristan, Villeurbanne
+    date: "2016"
+    label: Collages
+  - place: Le Court-Circuit, Lyon
+    date: "2017"
+    label: Collages
+  - place: Maison de l'économie circulaire, Lyon
+    date: "2018"
+    label: Collages
 images:
   - src: img/5aad0ee065261virgil-roger_collages-1.jpg
   - src: img/5aad0ee104fa5virgil-roger_collages-2.jpg
