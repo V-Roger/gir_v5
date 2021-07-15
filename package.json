@@ -12,10 +12,12 @@
     "@babel/core": "^7.14.6",
     "@babel/preset-react": "^7.14.5",
     "@netlify/plugin-nextjs": "^3.5.0",
+    "@types/webpack-env": "^1.16.2",
     "imagemin-mozjpeg": "^9.0.0",
     "next": "11.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-markdown": "^6.0.2",
     "react-masonry-css": "^1.0.16",
     "react-perfect-scrollbar": "^1.5.8",
     "sass": "^1.35.1"

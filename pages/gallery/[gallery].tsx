@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import PerfectScrollbar from 'react-perfect-scrollbar'
-import styles from '../styles/Gallery.module.scss'
+import ReactMarkdown from 'react-markdown'
 import 'react-perfect-scrollbar/dist/css/styles.css'
-import { attributes, react as GalleryContent } from '../content/galleries/oneroll.md'
+import styles from '../../styles/Gallery.module.scss'
 
-export default function Home() {
+export default function Gallery({ attributes, content }: { attributes: Record<string, any>, content: string}) {
   const { images, title, exhibitions } = attributes;
 
   return (
@@ -45,11 +45,13 @@ export default function Home() {
         </header>
         <PerfectScrollbar className={styles.gallery}>
         {
-          images.map((image: { id: string; src: string; alt: string; }) => <div className={styles['photo']} key={image.id}><Image src={image.src} alt={image.alt} width={800} height={800} objectFit="contain" /></div>)
+          images?.map((image: { id: string; src: string; alt: string; }) => <div className={styles['photo']} key={image.id}><Image src={image.src} alt={image.alt} width={800} height={800} objectFit="contain" /></div>)
         }
         </PerfectScrollbar>
         <PerfectScrollbar className={styles.content}>
-          <GalleryContent />
+          <ReactMarkdown>
+            { content }
+            </ReactMarkdown>
         </PerfectScrollbar>
       </main>
 
@@ -57,4 +59,35 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+export async function getStaticProps({ ...ctx }) {
+  const { gallery } = ctx.params
+  const { attributes, body } = await import(`../../content/galleries/${gallery}.md`)
+
+  return {
+    props: {
+      attributes: attributes,
+      content: body
+    },
+  }
+}
+
+export async function getStaticPaths() {
+  const gallerySlugs = ((context) => {
+    const keys = context.keys()
+    const data = keys.map((key: string, index: number) => {
+      let slug = key.replace(/^.*[\\\/]/, '').slice(0, -3)
+
+      return slug
+    })
+    return data
+  })(require.context('../../content/galleries', true, /\.md$/))
+
+  const paths = gallerySlugs.map((slug: string) => `/gallery/${slug}`)
+
+  return {
+    paths,
+    fallback: false,
+  }
 }
