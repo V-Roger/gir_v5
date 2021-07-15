@@ -4,6 +4,28 @@ backend:
 media_folder: public/img
 public_folder: img
 collections:
+  - name: "galleries"
+    label: "Galeries"
+    files: 
+    - label: "One Roll #2"
+      name: "One Roll #2"
+      file: "content/oneroll.md"
+      fields:
+        - { label: "Title", name: "title", widget: "string"}
+        - { label: "Publish Date", name: "date", widget: "datetime" }
+        - { label: "Body", name: "body", widget: "markdown"}
+        - label: "Exhibitions"
+          name: "exhibitions"
+          widget: "list"
+          fields:
+            - { label: "Place", name: "place", widget: "string" }
+            - { label: "Date", name: "date", widget: "string" }
+            - { label: "Label", name: "label", widget: "string" }
+        - label: "Photos"
+          name: "images"
+          widget: "list"
+          fields:
+            - { label: "Photo", name: "photo", widget: "image" }
   - name: "pages"
     label: "Pages"
     files:
@@ -14,9 +36,3 @@ collections:
         - { label: "Title", name: "title", widget: "string"}
         - { label: "Publish Date", name: "date", widget: "datetime" }
         - { label: "Body", name: "body", widget: "markdown"}
-        - label: 'Cats'
-          name: "cats"
-          widget: list
-          fields:
-            - { label: "Name", name: "name", widget: "string"}
-            - { label: "Description", name: "description", widget: "text"}
