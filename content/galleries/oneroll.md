@@ -6,24 +6,12 @@ exhibitions:
     label: "One Roll #2"
 date: 2019-03-17T19:31:20.591Z
 images:
-  - src: /img/5ce2682135e9e20190317_038.jpg
-    id: foo
-    alt: foo
-  - src: /img/5ce2681d1b5ce20190120_002.jpg
-    id: foo
-    alt: foo
-  - src: /img/5ce26815b4f8d20181113_036.jpg
-    id: foo
-    alt: foo
-  - src: /img/5ce26819ea6a720181201_037.jpg
-    id: foo
-    alt: foo
-  - src: /img/5ce268108161e20180827_018.jpg
-    id: foo
-    alt: foo
-  - src: /img/5ce268139367e20181021_007.jpg
-    id: foo
-    alt: foo
+  - src: img/5ce2682135e9e20190317_038.jpg
+  - src: img/5ce2681d1b5ce20190120_002.jpg
+  - src: img/5ce26815b4f8d20181113_036.jpg
+  - src: img/5ce26819ea6a720181201_037.jpg
+  - src: img/5ce268108161e20180827_018.jpg
+  - src: img/5ce268139367e20181021_007.jpg
 ---
 Je ne fais pas de portrait; enfin c'est ce que j'aime dire. J'aime aussi dire que je n'aime pas les gens. Sauf quelques uns. Pourquoi alors présenter ce travail centré sur une personne ? Sur du portrait ? Sur du presque intime ?
 

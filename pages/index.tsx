@@ -1,8 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
+import { promises as fs } from 'fs'
+import path from 'path'
 import styles from '../styles/Home.module.scss'
 
-export default function Home() {
+export default function Home({ galleries }: { galleries: { slug: string, title: string;}[] }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -35,66 +38,13 @@ export default function Home() {
             </li>
           </ul>
           <ul className={styles['nav--scrollable']}>
-            <li>
-              <a>
-                Collages
-              </a>
-            </li>
-            <li>
-              <a>
-                Victoria
-              </a>
-            </li>
-            <li>
-              <a>
-                Napoli
-              </a>
-            </li>
-            <li>
-              <a>
-                Please Look Up
-              </a>
-            </li>
-            <li>
-              <a>
-                Medium
-              </a>
-            </li>
-            <li>
-              <a>
-                One Roll #2
-              </a>
-            </li>
-            <li>
-              <a>
-                Collages
-              </a>
-            </li>
-            <li>
-              <a>
-                Victoria
-              </a>
-            </li>
-            <li>
-              <a>
-                Napoli
-              </a>
-            </li>
-            <li>
-              <a>
-                Please Look Up
-              </a>
-            </li>
-            <li>
-              <a>
-                Medium
-              </a>
-            </li>
-            <li>
-              <a>
-                One Roll #2
-              </a>
-            </li>
+            {
+              galleries?.map((gallery: { slug: string; title: string;}) => <li key={gallery.slug}>
+                <Link href="/gallery/[id]" as={`/gallery/${gallery.slug}`}>
+                  { gallery.title }
+                </Link>
+              </li>)
+            }
           </ul>
         </nav>
       </main>
@@ -103,4 +53,24 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+export async function getStaticProps() {
+  const galleriesDirectory = path.join(process.cwd(), 'content/galleries')
+  const filenames = await fs.readdir(galleriesDirectory)
+
+  const galleries = filenames.map(async (filename) => {
+    const { attributes } = await import(`../content/galleries/${filename}`)
+
+    return {
+      slug: filename.replace(/^.*[\\\/]/, '').slice(0, -3),
+      title: attributes.title
+    }
+  })
+
+  return {
+    props: {
+      galleries: await Promise.all(galleries),
+    },
+  }
 }
