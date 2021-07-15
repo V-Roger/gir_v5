@@ -45,7 +45,7 @@ export default function Gallery({ attributes, content }: { attributes: Record<st
         </header>
         <PerfectScrollbar className={styles.gallery}>
         {
-          images?.map((image: { id: string; src: string; alt: string; }) => <div className={styles['photo']} key={image.id}><Image src={image.src} alt={image.alt} width={800} height={800} objectFit="contain" /></div>)
+          images?.map((image: { id: string; src: string; alt: string; }) => <div className={styles['photo']} key={image.id}><Image src={`/${image.src}`} alt={image.alt} width={800} height={800} objectFit="contain" /></div>)
         }
         </PerfectScrollbar>
         <PerfectScrollbar className={styles.content}>
