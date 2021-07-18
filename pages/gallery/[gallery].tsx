@@ -4,9 +4,10 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 import ReactMarkdown from 'react-markdown'
 import 'react-perfect-scrollbar/dist/css/styles.css'
 import styles from '../../styles/Gallery.module.scss'
+import { getPlaiceholder } from 'plaiceholder'
 
-export default function Gallery({ attributes, content }: { attributes: Record<string, any>, content: string}) {
-  const { images, title, exhibitions } = attributes;
+export default function Gallery({ attributes, photos, content }: { photos: Array<{src: string; alt: string; blurDataURL: string}>, attributes: Record<string, any>, content: string}) {
+  const { title, exhibitions } = attributes;
 
   return (
     <div className={styles.container}>
@@ -45,7 +46,17 @@ export default function Gallery({ attributes, content }: { attributes: Record<st
         </header>
         <PerfectScrollbar className={styles.gallery}>
         {
-          images?.map((image: { id: string; src: string; alt: string; }) => <div className={styles['photo']} key={image.src}><Image src={`/${image.src}`} alt={image.alt} width={800} height={800} objectFit="contain" /></div>)
+          photos?.map((image: { src: string; alt: string; blurDataURL: string }, index: number) => <div className={styles['photo']} key={image.src}>
+            <Image
+              src={`/${image.src}`}
+              alt={`${image.src}`} 
+              width={1200} 
+              height={800} 
+              quality={100} 
+              placeholder="blur"
+              blurDataURL={image.blurDataURL}
+              objectFit="contain" />
+          </div>)
         }
         </PerfectScrollbar>
         <PerfectScrollbar className={styles.content}>
@@ -65,10 +76,19 @@ export async function getStaticProps({ ...ctx }) {
   const { gallery } = ctx.params
   const { attributes, body } = await import(`../../content/galleries/${gallery}.md`)
 
+  const photos = await Promise.all(attributes.images.map(async (image: Record<string, any>) => {
+    const { base64 } = await getPlaiceholder(`/${image.src}`);
+    return {
+      ...image,
+      blurDataURL: base64
+    }
+  }))
+
   return {
     props: {
       attributes: attributes,
-      content: body
+      content: body,
+      photos,
     },
   }
 }
