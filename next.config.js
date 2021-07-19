@@ -1,4 +1,6 @@
-module.exports = {
+const withImages = require('next-images');
+
+module.exports = withImages({
     reactStrictMode: true,
     webpack: (cfg) => {
         cfg.module.rules.push(
@@ -10,6 +12,8 @@ module.exports = {
                 }            
             }
         )
+        cfg.externals.sharp =  'commonjs sharp'
+
         return cfg;
     }
-};
+});
