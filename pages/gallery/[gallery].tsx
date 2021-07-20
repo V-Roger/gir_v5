@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import ReactMarkdown from 'react-markdown'
-import 'react-perfect-scrollbar/dist/css/styles.css'
 import styles from '../../styles/Gallery.module.scss'
 import { getPlaiceholder } from 'plaiceholder'
 

@@ -1,7 +1,7 @@
-const withImages = require('next-images');
 const nodeExternals = require('webpack-node-externals')
+const { PHASE_PRODUCTION_BUILD } = require('next/constants')
 
-module.exports = withImages({
+module.exports = (phase) => ({
     reactStrictMode: true,
     webpack: (config) => {
         config.module.rules.push(
@@ -13,13 +13,9 @@ module.exports = withImages({
                 }            
             }
         )
-        config.module.rules.push(
-            {
-            test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
-            loader: 'url-loader' 
+        if (phase === PHASE_PRODUCTION_BUILD) {
+            config.externals = [nodeExternals()]
         }
-        )
-        config.externals = [nodeExternals()]
 
         return config;
     }

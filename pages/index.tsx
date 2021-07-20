@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { promises as fs } from 'fs'
-import path from 'path'
 import styles from '../styles/Home.module.scss'
 
 export default function Home({ galleries }: { galleries: { slug: string, title: string;}[] }) {
