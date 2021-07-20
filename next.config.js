@@ -14,7 +14,7 @@ module.exports = (phase) => ({
             }
         )
         if (phase === PHASE_PRODUCTION_BUILD) {
-            config.externals = [nodeExternals()]
+            // config.externals = [nodeExternals()]
         }
 
         return config;
