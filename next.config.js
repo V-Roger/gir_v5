@@ -1,4 +1,6 @@
-module.exports = () => ({
+const { withPlaiceholder } = require('@plaiceholder/next');
+
+module.exports = withPlaiceholder({
     reactStrictMode: true,
     webpack: (config) => {
         config.module.rules.push(
@@ -10,14 +12,6 @@ module.exports = () => ({
                 }            
             }
         )
-
-        config.externals = [
-            'react',
-            'react-dom',
-            {
-                'sharp': 'commonjs sharp'
-            }
-        ]
 
         return config;
     }
