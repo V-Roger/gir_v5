@@ -11,6 +11,14 @@ module.exports = () => ({
             }
         )
 
+        config.externals = [
+            'react',
+            'react-dom',
+            {
+                'sharp': 'commonjs sharp'
+            }
+        ]
+
         return config;
     }
 });
