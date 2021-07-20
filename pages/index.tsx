@@ -55,21 +55,27 @@ export default function Home({ galleries }: { galleries: { slug: string, title: 
   )
 }
 
-export async function getStaticProps() {
-  const filenames = await fs.readdir('content/galleries')
+const getGalleries = async (context: any) => {
+  const keys = context.keys()
+  const values = keys.map(context)
 
-  const galleries = filenames.map(async (filename) => {
-    const { attributes } = await import(`../content/galleries/${filename}`)
+  return Promise.all(keys.map(async (key: string, index: number) => {
+    let slug = key.replace(/^.*[\\\/]/, '').slice(0, -3)
+    const { attributes } = values[index]
 
     return {
-      slug: filename.replace(/^.*[\\\/]/, '').slice(0, -3),
+      slug,
       title: attributes.title
     }
-  })
+  }))
+}
+
+export const getServerSideProps = async ({ params }: { params: any }) => {
+  const galleryPromises = ((context) => {
+    return getGalleries(context);
+  }) (require.context("../content/galleries", true, /\.md$/));
 
   return {
-    props: {
-      galleries: await Promise.all(galleries),
-    },
-  }
-}
+    props: { ...params, galleries: await galleryPromises },
+  };
+};
