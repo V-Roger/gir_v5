@@ -5,7 +5,7 @@
   publish = "out"
 
 [functions]
-  included_files = ["../../content/**/*.md"]
+  included_files = ["content/galleries/*.md"]
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
