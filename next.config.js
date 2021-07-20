@@ -2,8 +2,8 @@ const withImages = require('next-images');
 
 module.exports = withImages({
     reactStrictMode: true,
-    webpack: (cfg) => {
-        cfg.module.rules.push(
+    webpack: (config) => {
+        config.module.rules.push(
             {
                 test: /\.md$/,
                 loader: 'frontmatter-markdown-loader',
@@ -12,8 +12,14 @@ module.exports = withImages({
                 }            
             }
         )
-        cfg.externals.sharp =  'commonjs sharp'
+        config.module.rules.push(
+            {
+            test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+            loader: 'url-loader' 
+        }
+        )
+        config.externals.sharp =  'commonjs sharp'
 
-        return cfg;
+        return config;
     }
 });
