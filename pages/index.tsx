@@ -56,8 +56,7 @@ export default function Home({ galleries }: { galleries: { slug: string, title: 
 }
 
 export async function getStaticProps() {
-  const galleriesDirectory = path.join(process.cwd(), 'content/galleries')
-  const filenames = await fs.readdir(galleriesDirectory)
+  const filenames = await fs.readdir('content/galleries')
 
   const galleries = filenames.map(async (filename) => {
     const { attributes } = await import(`../content/galleries/${filename}`)

@@ -11,7 +11,7 @@
   "dependencies": {
     "@babel/core": "^7.14.6",
     "@babel/preset-react": "^7.14.5",
-    "@netlify/plugin-nextjs": "^3.5.0",
+    "@netlify/plugin-nextjs": "^3.7.1",
     "@types/webpack-env": "^1.16.2",
     "imagemin-mozjpeg": "^9.0.0",
     "next": "11.0.1",
