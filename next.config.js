@@ -1,4 +1,5 @@
 const withImages = require('next-images');
+const nodeExternals = require('webpack-node-externals')
 
 module.exports = withImages({
     reactStrictMode: true,
@@ -18,7 +19,7 @@ module.exports = withImages({
             loader: 'url-loader' 
         }
         )
-        config.externals.sharp =  'commonjs sharp'
+        config.externals = [nodeExternals()]
 
         return config;
     }
