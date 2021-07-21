@@ -15,3 +15,9 @@ publications:
   - medium: Carnet de voyage
     date: "2020"
 ---
+* Auteur photographe à l’approche minimaliste, passionné de
+procédés argentiques et de vieilles mécaniques
+* Membre fondateur du collectif PUSH
+* À la recherche de sujets qui n’en sont pas
+* Défenseur d’un retour au medium photographique physique
+* Bricoleur et hacker dans l’âme

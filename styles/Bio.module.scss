@@ -1,0 +1,49 @@
+.columns {
+  display: grid;
+  grid-template-columns: 2fr 11fr 5fr;
+  grid-template-areas: 'title portrait content';
+  row-gap: 12px;
+  column-gap: 12px;
+}
+
+.bio {
+  grid-area: portrait;
+
+  & h3 {
+    font-size: 4em;
+    font-weight: 300;
+    margin-bottom: 0;
+    padding: 0;
+  }
+}
+
+.content {
+  grid-area: content;
+  margin-top: 8em;
+  padding-right: 1em;
+
+  & ul {
+    list-style-type: square;
+    
+    & li {
+      font-size: 1.2em;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.title {
+  grid-area: title;
+  position: fixed;
+  top: calc(50% - 0.65em);
+  left: -2.6em;
+  transform: rotate(-90deg);
+  height: 1.3em;
+  width: 100vh;
+  font-size: 8em;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-weight: 300;
+  text-transform: uppercase;
+}
