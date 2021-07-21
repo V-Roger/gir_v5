@@ -30,9 +30,9 @@ export default function Home({ galleries }: { galleries: { slug: string, title: 
               </a>
             </li>
             <li>
-              <a>
+              <Link href="/bio" as={`/bio`}>
                 Bio
-              </a>
+              </Link>            
             </li>
           </ul>
           <ul className={styles['nav--scrollable']}>

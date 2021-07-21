@@ -4,6 +4,30 @@ backend:
 media_folder: public/img
 public_folder: img
 collections:
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "Bio"
+        name: "bio"
+        file: "content/bio.md"
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Portrait, name: portrait, widget: image }
+          - label: Exhibitions
+            name: exhibitions
+            widget: list
+            fields:
+              - { label: "Place", name: "place", widget: "string" }
+              - { label: "Date", name: "date", widget: "string" }
+              - { label: "Label", name: "label", widget: "string", required: false }
+          - label: Publications
+            name: publications
+            widget: list
+            fields:
+              - { label: "Medium", name: "medium", widget: "string" }
+              - { label: "Date", name: "date", widget: "string" }
+              - { label: "Label", name: "label", widget: "string", required: false }
+              
   - name: "galleries"
     label: "Galeries"
     folder: "content/galleries"
