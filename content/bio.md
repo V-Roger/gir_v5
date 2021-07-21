@@ -37,10 +37,15 @@ exhibitions:
     date: 2011
     label: À 50mm du Soudan /
 publications:
-  - medium: Grainzilla
+  - medium: Grainzilla n°2
     date: "2020"
-  - medium: Carnet de voyage
+  - medium: Carnet de voyage en Égypte
     date: "2020"
+    label: Auto-édition
+  - medium: Grainzilla n°3
+    date: "2020"
+  - medium: "Grainzilla : Every single grain counts"
+    date: "2021"
 ---
 * Auteur photographe à l’approche minimaliste, passionné de
 procédés argentiques et de vieilles mécaniques
