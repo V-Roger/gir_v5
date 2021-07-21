@@ -3,7 +3,7 @@
   grid-template-columns: 2fr 11fr 5fr;
   grid-template-areas: 'title portrait content';
   row-gap: 12px;
-  column-gap: 12px;
+  height: 100vh;
 }
 
 .bio {
@@ -15,20 +15,43 @@
     margin-bottom: 0;
     padding: 0;
   }
+
+  & img {
+    border-radius: 4px;
+  }
 }
 
 .content {
   grid-area: content;
-  margin-top: 8em;
+  margin-top: 128px;
   padding-right: 1em;
+  overflow: auto;
 
   & ul {
     list-style-type: square;
     
     & li {
       font-size: 1.2em;
-      margin-bottom: 1em;
+      margin-bottom: 16px;
     }
+  }
+}
+
+.exhibitions,
+.publications {
+  grid-area: content;
+  margin-top: 128px;
+  padding: 0 1em;
+
+  & b {
+    font-weight: 800;
+  }
+
+  & h3 {
+    font-size: 4em;
+    font-weight: 300;
+    margin-bottom: 0;
+    padding: 0;
   }
 }
 
