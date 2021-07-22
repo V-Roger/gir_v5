@@ -40,27 +40,6 @@ export default function Home({ galleries }: { galleries: { slug: string, title: 
                   </Link>
                 </li>)
               }
-                          {
-                galleries?.map((gallery: { slug: string; title: string;}) => <li key={gallery.slug}>
-                  <Link href="/gallery/[id]" as={`/gallery/${gallery.slug}`}>
-                    { gallery.title }
-                  </Link>
-                </li>)
-              }
-                                      {
-                galleries?.map((gallery: { slug: string; title: string;}) => <li key={gallery.slug}>
-                  <Link href="/gallery/[id]" as={`/gallery/${gallery.slug}`}>
-                    { gallery.title }
-                  </Link>
-                </li>)
-              }
-                                                    {
-                galleries?.map((gallery: { slug: string; title: string;}) => <li key={gallery.slug}>
-                  <Link href="/gallery/[id]" as={`/gallery/${gallery.slug}`}>
-                    { gallery.title }
-                  </Link>
-                </li>)
-              }
             </ul>
           </PerfectScrollbar>
         </nav>
