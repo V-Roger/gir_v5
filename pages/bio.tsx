@@ -1,10 +1,12 @@
 import Head from "next/head"
 import { Component } from 'react'
 import Image from 'next/image'
+import Link from "next/link"
 import PerfectScrollbar from 'react-perfect-scrollbar'
-import ReactMarkdown from "react-markdown";
-import { attributes, body as bioContent } from '../content/bio.md';
+import ReactMarkdown from "react-markdown"
+import { attributes, body as bioContent } from '../content/bio.md'
 import styles from '../styles/Bio.module.scss'
+import arrows from '../public/img/arrows-left.svg'
 
 export default class Bio extends Component {
   render() {
@@ -17,6 +19,11 @@ export default class Bio extends Component {
           <link rel="icon" href="/img/favicon.ico" />
           <link rel="stylesheet" href="https://use.typekit.net/nfs5ypt.css" />
         </Head>
+        <nav className={styles.nav}>
+          <Link href="/" as={`/`} passHref>
+            <Image src={arrows} alt="Back home" />
+          </Link>
+        </nav>
         <main className={styles.columns}>
           <h1 className={styles.title}>{title}</h1>
           <section className={styles.bio}>

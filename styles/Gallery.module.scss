@@ -28,6 +28,27 @@
   }
 }
 
+.nav {
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
+  cursor: pointer;
+  text-align: center;
+  padding: 0.2em 0.6em 0 0.6em;
+  transition: all 40ms ease-out;
+  z-index: 10;
+
+  &:hover,
+  &:active {
+    left: 0.6em;
+  }
+
+  @media all and (max-width: 1000px) {
+    bottom: unset;
+    top: 1em;
+  }
+}
+
 .gallery {
   max-height: 100vh;
   grid-area: gallery;

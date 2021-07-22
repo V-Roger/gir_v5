@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from "next/link"
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import ReactMarkdown from 'react-markdown'
 import styles from '../../styles/Gallery.module.scss'
+import arrows from '../../public/img/arrows-left.svg'
 
 export default function Gallery({ attributes, photos, content }: { photos: Array<{src: string; alt: string; blurDataURL: string}>, attributes: Record<string, any>, content: string}) {
   const { title, exhibitions } = attributes;
@@ -15,7 +17,12 @@ export default function Gallery({ attributes, photos, content }: { photos: Array
         <link rel="icon" href="/img/favicon.ico" />
         <link rel="stylesheet" href="https://use.typekit.net/nfs5ypt.css" />
       </Head>
-
+      <nav className={styles.nav}>
+        <Link href="/" as={`/`} passHref>
+          <Image src={arrows} alt="Back home" />
+        </Link>
+      </nav>
+      
       <main className={styles.main}>
         <header className={styles.header}>
           <h1 className={styles['header-title']}>{ title }</h1>
