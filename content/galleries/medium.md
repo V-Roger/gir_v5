@@ -5,6 +5,12 @@ exhibitions:
   - place: La Cordée Jean Macé, Lyon
     date: "2019"
     label: Avec le collectif PUSH
+  - place: Le Court-Circuit, Lyon
+    date: "2019"
+    label: Avec le collectif PUSH
+  - place: Les rencontres photographiques du Prieuré, Salaise sur Sanne
+    date: "2019"
+    label: Avec le collectif PUSH
 images:
   - src: img/photaix_vroger_9_747a9f3187.jpg
   - src: img/photaix_vroger_8_b749487d56.jpg
