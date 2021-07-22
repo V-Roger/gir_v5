@@ -33,7 +33,7 @@ $black: #1E1E1F;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    max-height: calc(100vh - 256px);
+    max-height: 50vh;
 
     @media all and (max-width: 1000px) {
       max-height: 100vh;
@@ -59,7 +59,7 @@ $black: #1E1E1F;
   
     &.nav--scrollable {
       max-width: 50vw;
-      margin-top: 128px;
+      margin-top: 92px;
       position: relative;
       left: calc(50% - 100px);
       overflow: auto;

@@ -78,6 +78,23 @@ $black: #1E1E1F;
   @media all and (max-width: 1000px) {
     margin-top: 12px;
   }
+
+  a {
+    display: inline-block;
+    cursor: pointer;
+    text-align: left;
+    padding: 0.2em 0.6em;
+    transition: all 40ms ease-out;
+    border-radius: 2px;
+    background: $black;
+    color: white;
+
+    &:hover,
+    &:focus {
+      color: $black;
+      background: transparent;
+    }
+  }
 }
 
 .exhibitions,

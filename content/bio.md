@@ -53,3 +53,4 @@ procédés argentiques et de vieilles mécaniques
 * À la recherche de sujets qui n’en sont pas
 * Défenseur d’un retour au medium photographique physique
 * Bricoleur et hacker dans l’âme
+* \>>> [Sur Instagram](https://instagram.com/mr_sumatra)
