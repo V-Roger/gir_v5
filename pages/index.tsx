@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import PerfectScrollbar from 'react-perfect-scrollbar'
 import styles from '../styles/Home.module.scss'
 
 export default function Home({ galleries }: { galleries: { slug: string, title: string;}[] }) {
@@ -14,41 +15,56 @@ export default function Home({ galleries }: { galleries: { slug: string, title: 
       </Head>
 
       <main className={styles.main}>
+        <div className={styles.logo} >
+          <Image alt="Logo de Virgil Roger" src="/img/logo_vroger.svg" width={158} height={104} objectFit="contain" />
+        </div>
         <nav className={styles.nav}>
           <ul className={styles['nav--fixed']}>
-            <li>
-              <Image className={styles.logo} alt="Logo de Virgil Roger" src="/img/logo_vroger.svg" width={150} height={100} objectFit="contain" />
-            </li>
-            <li>
-              <a>
-                Accueil
-              </a>
-            </li>
-            <li>
-              <a>
-                Contact
-              </a>
-            </li>
             <li>
               <Link href="/bio" as={`/bio`}>
                 Bio
               </Link>            
             </li>
+            <li>
+              <a href="mailto:roger.virgil+contact@gmail.com" title="Contacter Virgil Roger par email">
+                Contact
+              </a>
+            </li>
           </ul>
-          <ul className={styles['nav--scrollable']}>
-            {
-              galleries?.map((gallery: { slug: string; title: string;}) => <li key={gallery.slug}>
-                <Link href="/gallery/[id]" as={`/gallery/${gallery.slug}`}>
-                  { gallery.title }
-                </Link>
-              </li>)
-            }
-          </ul>
+          <PerfectScrollbar>
+            <ul className={styles['nav--scrollable']}>
+              {
+                galleries?.map((gallery: { slug: string; title: string;}) => <li key={gallery.slug}>
+                  <Link href="/gallery/[id]" as={`/gallery/${gallery.slug}`}>
+                    { gallery.title }
+                  </Link>
+                </li>)
+              }
+                          {
+                galleries?.map((gallery: { slug: string; title: string;}) => <li key={gallery.slug}>
+                  <Link href="/gallery/[id]" as={`/gallery/${gallery.slug}`}>
+                    { gallery.title }
+                  </Link>
+                </li>)
+              }
+                                      {
+                galleries?.map((gallery: { slug: string; title: string;}) => <li key={gallery.slug}>
+                  <Link href="/gallery/[id]" as={`/gallery/${gallery.slug}`}>
+                    { gallery.title }
+                  </Link>
+                </li>)
+              }
+                                                    {
+                galleries?.map((gallery: { slug: string; title: string;}) => <li key={gallery.slug}>
+                  <Link href="/gallery/[id]" as={`/gallery/${gallery.slug}`}>
+                    { gallery.title }
+                  </Link>
+                </li>)
+              }
+            </ul>
+          </PerfectScrollbar>
         </nav>
       </main>
-
-      <footer className={styles.footer}>
-      </footer>
     </div>
   )
 }
