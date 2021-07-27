@@ -14,7 +14,19 @@ export default function Gallery({ attributes, photos, content }: { photos: Array
       <Head>
         <title>{ title }</title>
         <meta name="description" content="Portfolio des photographies de Virgil Roger" />
-        <link rel="icon" href="/img/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta property="og:title"              content="Virgil Roger | Auteur photographe" />
+        <meta property="fb:app_id"              content="222874507778428" />
+        <meta property="og:description"        content={title} />
+        <meta property="og:image"              content={photos[0].src} />
+        <meta name="apple-mobile-web-app-title" content="Virgil Roger | Auteur photographe" />
+        <meta name="application-name" content="Virgil Roger | Auteur photographe" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff" />
         <link rel="stylesheet" href="https://use.typekit.net/nfs5ypt.css" />
       </Head>
       <nav className={styles.nav}>
