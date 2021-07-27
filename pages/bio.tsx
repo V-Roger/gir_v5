@@ -30,7 +30,8 @@ export default class Bio extends Component {
               <h3>Je suis</h3>
               <Image
                 src={`/${portrait}`}
-                alt="Virgil Roger" 
+                alt="Virgil Roger"
+                priority={true}
                 width={1200} 
                 height={800} 
                 quality={100}

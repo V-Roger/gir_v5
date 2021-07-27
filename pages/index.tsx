@@ -16,7 +16,7 @@ export default function Home({ galleries }: { galleries: { slug: string, title: 
 
       <main className={styles.main}>
         <div className={styles.logo} >
-          <Image alt="Logo de Virgil Roger" src="/img/logo_vroger.svg" width={158} height={104} objectFit="contain" />
+          <Image alt="Logo de Virgil Roger" src="/img/logo_vroger.svg" priority={true} width={158} height={104} objectFit="contain" />
         </div>
         <nav className={styles.nav}>
           <ul className={styles['nav--fixed']}>
