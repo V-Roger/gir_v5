@@ -19,7 +19,7 @@ export default function Home({ galleries }: { galleries: { slug: string, title: 
         <meta property="og:title"              content="Virgil Roger | Auteur photographe" />
         <meta property="fb:app_id"             content="222874507778428" />
         <meta property="og:description"        content="Portfolio des photographies de Virgil Roger" />
-        <meta property="og:image"              content={`${process.env.URL || ''}/img/logo_vroger.svg`} />
+        <meta property="og:image"              content={`${process.env.URL || ''}/img/logo.png`} />
         <meta property="og:image:width"        content="2160" />
         <meta property="og:image:height"       content="1440" />
         <meta name="apple-mobile-web-app-title" content="Virgil Roger | Auteur photographe" />
