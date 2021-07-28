@@ -16,6 +16,7 @@
   .content {
     grid-area: content;
     max-height: 100vh;
+    overflow: auto;
     padding: 1em;
     text-align: justify;
   }
@@ -52,6 +53,7 @@
 .gallery {
   max-height: 100vh;
   grid-area: gallery;
+  overflow: auto;
   
   & .photo,
   & .photo div {

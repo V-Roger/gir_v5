@@ -32,8 +32,8 @@ export default function Gallery({ attributes, photos, content, gallery }: { gall
         <link rel="stylesheet" href="https://use.typekit.net/nfs5ypt.css" />
       </Head>
       <nav className={styles.nav}>
-        <Link href="/" as={`/`} passHref>
-          <Image src={arrows} alt="Back home" />
+        <Link href="/" passHref>
+          <a><Image src={arrows} alt="Back home" /></a>
         </Link>
       </nav>
       
