@@ -5,7 +5,7 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 import styles from '../styles/Home.module.scss'
 import logo from '../public/img/logo_vroger.svg'
 
-export default function Home({ galleries }: { galleries: { slug: string, title: string;}[] }) {
+export default function Home({ galleries, url }: { galleries: { slug: string, title: string;}[], url: string }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -22,6 +22,8 @@ export default function Home({ galleries }: { galleries: { slug: string, title: 
         <meta property="og:image"              content={`${process.env.URL || ''}/img/logo.png`} />
         <meta property="og:image:width"        content="2160" />
         <meta property="og:image:height"       content="1440" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={url} />
         <meta name="apple-mobile-web-app-title" content="Virgil Roger | Auteur photographe" />
         <meta name="application-name" content="Virgil Roger | Auteur photographe" />
         <meta name="msapplication-TileColor" content="#ffffff" />
@@ -93,7 +95,7 @@ const getGalleries = async (context: any) => {
   }))
 }
 
-export const getServerSideProps = async ({ params }: { params: any }) => {
+export const getServerSideProps = async ({req, params}: { req: any, params: any}) => {
   const galleryPromises = ((context) => {
     return getGalleries(context);
   }) (require.context("../content/galleries", true, /\.md$/));
@@ -102,6 +104,7 @@ export const getServerSideProps = async ({ params }: { params: any }) => {
     props: { 
       ...params, 
       galleries: await galleryPromises,
-    },
+      url: `${process.env.URL || 'https://' + req.headers.host}${req.url}`
+    }
   };
 };

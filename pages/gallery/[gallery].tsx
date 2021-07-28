@@ -6,7 +6,7 @@ import ReactMarkdown from 'react-markdown'
 import styles from '../../styles/Gallery.module.scss'
 import arrows from '../../public/img/arrows-left.svg'
 
-export default function Gallery({ attributes, photos, content }: { photos: Array<{src: string; alt: string; blurDataURL: string}>, attributes: Record<string, any>, content: string}) {
+export default function Gallery({ attributes, photos, content, gallery }: { gallery: string, photos: Array<{src: string; alt: string; blurDataURL: string}>, attributes: Record<string, any>, content: string}) {
   const { title, exhibitions } = attributes;
 
   return (
@@ -23,6 +23,8 @@ export default function Gallery({ attributes, photos, content }: { photos: Array
         <meta property="fb:app_id"              content="222874507778428" />
         <meta property="og:description"        content={title} />
         <meta property="og:image"              content={`${process.env.URL || ''}/${photos[0].src}`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${process.env.URL || ''}/gallery/${gallery}`} />
         <meta name="apple-mobile-web-app-title" content="Virgil Roger | Auteur photographe" />
         <meta name="application-name" content="Virgil Roger | Auteur photographe" />
         <meta name="msapplication-TileColor" content="#ffffff" />
@@ -99,9 +101,11 @@ export async function getStaticProps({ ...ctx }) {
       attributes: attributes,
       content: body,
       photos: attributes.images,
+      gallery,
     },
   }
 }
+
 
 export async function getStaticPaths() {
   const gallerySlugs = ((context) => {
