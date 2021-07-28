@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import styles from '../styles/Home.module.scss'
+import logo from '../public/img/logo_vroger.svg'
 
 export default function Home({ galleries }: { galleries: { slug: string, title: string;}[] }) {
   return (
@@ -16,9 +17,11 @@ export default function Home({ galleries }: { galleries: { slug: string, title: 
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta property="og:title"              content="Virgil Roger | Auteur photographe" />
-        <meta property="fb:app_id"              content="222874507778428" />
+        <meta property="fb:app_id"             content="222874507778428" />
         <meta property="og:description"        content="Portfolio des photographies de Virgil Roger" />
-        <meta property="og:image"              content={typeof window !== 'undefined' && window.location.hostname && `${window.location.hostname}/img/logo_vroger.svg` || 'https://virgil-roger.photography/img/logo_vroger.svg'} />
+        <meta property="og:image"              content={logo.src} />
+        <meta property="og:image:width"        content="2160" />
+        <meta property="og:image:height"       content="1440" />
         <meta name="apple-mobile-web-app-title" content="Virgil Roger | Auteur photographe" />
         <meta name="application-name" content="Virgil Roger | Auteur photographe" />
         <meta name="msapplication-TileColor" content="#ffffff" />
@@ -28,7 +31,7 @@ export default function Home({ galleries }: { galleries: { slug: string, title: 
 
       <main className={styles.main}>
         <div className={styles.logo} >
-          <Image alt="Logo de Virgil Roger" src="/img/logo_vroger.svg" priority={true} width={158} height={104} objectFit="contain" />
+          <Image alt="Logo de Virgil Roger" src={logo} priority={true} width={158} height={104} objectFit="contain" />
         </div>
         <nav className={styles.nav}>
           <ul className={styles['nav--fixed']}>
@@ -96,6 +99,9 @@ export const getServerSideProps = async ({ params }: { params: any }) => {
   }) (require.context("../content/galleries", true, /\.md$/));
 
   return {
-    props: { ...params, galleries: await galleryPromises },
+    props: { 
+      ...params, 
+      galleries: await galleryPromises,
+    },
   };
 };
