@@ -22,7 +22,7 @@ export default function Gallery({ attributes, photos, content }: { photos: Array
         <meta property="og:title"              content="Virgil Roger | Auteur photographe" />
         <meta property="fb:app_id"              content="222874507778428" />
         <meta property="og:description"        content={title} />
-        <meta property="og:image"              content={photos[0].src} />
+        <meta property="og:image"              content={`${process.env.URL || ''}/${photos[0].src}`} />
         <meta name="apple-mobile-web-app-title" content="Virgil Roger | Auteur photographe" />
         <meta name="application-name" content="Virgil Roger | Auteur photographe" />
         <meta name="msapplication-TileColor" content="#ffffff" />
