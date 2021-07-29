@@ -7,6 +7,7 @@ images:
   - src: img/5b96d55acb3d3_psx_20180910_223314_20e10e8ec9.jpg
   - src: img/5b96d66534cef_psx_20180910_223823_ff0799f6a5.jpg
   - src: img/5dcae41a8b304magda_812f7754ec.jpg
+  - src: img/tu_thomas-1-.jpg
 ---
 Des portraits, posés autour d'une boisson de ton choix.
 
