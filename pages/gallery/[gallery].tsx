@@ -1,3 +1,4 @@
+import { useContext } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from "next/link"
@@ -5,9 +6,11 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 import ReactMarkdown from 'react-markdown'
 import styles from '../../styles/Gallery.module.scss'
 import arrows from '../../public/img/arrows-left.svg'
+import AppContext from '../../components/context'
 
 export default function Gallery({ attributes, photos, content, gallery }: { gallery: string, photos: Array<{src: string; alt: string; blurDataURL: string}>, attributes: Record<string, any>, content: string}) {
-  const { title, exhibitions } = attributes;
+  const { title, exhibitions } = attributes
+  const { negative } = useContext(AppContext)
 
   return (
     <div className={styles.container}>
@@ -36,7 +39,7 @@ export default function Gallery({ attributes, photos, content, gallery }: { gall
           <a><Image src={arrows} alt="Back home" /></a>
         </Link>
       </nav>
-      
+
       <main className={styles.main}>
         <header className={styles.header}>
           <h1 className={styles['header-title']}>{ title }</h1>
@@ -65,7 +68,7 @@ export default function Gallery({ attributes, photos, content, gallery }: { gall
         </header>
         <PerfectScrollbar className={styles.gallery}>
         {
-          photos?.map((image: { src: string; alt: string; blurDataURL: string }, index: number) => <div className={styles['photo']} key={image.src}>
+          photos?.map((image: { src: string; alt: string; blurDataURL: string }, index: number) => <div className={`${styles.photo} ${negative ? styles.negative : ''}`} key={image.src}>
             <Image
               src={`/${image.src}`}
               alt={`${image.src}`} 

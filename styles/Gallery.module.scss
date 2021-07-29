@@ -61,6 +61,10 @@
     min-height: 100vh;
     padding: 16px;
   }
+
+  & .photo.negative {
+    filter: invert(1);
+  }
   
   & img {
     width: 100%;
