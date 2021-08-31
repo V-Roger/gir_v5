@@ -46,6 +46,9 @@ publications:
     date: "2020"
   - medium: "Grainzilla : Every single grain counts"
     date: "2021"
+  - medium: Nowhere Fast
+    date: "2021"
+    label: '"Carnet de Voyage" '
 ---
 * Auteur photographe à l’approche minimaliste, passionné de
 procédés argentiques et de vieilles mécaniques
