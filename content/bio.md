@@ -3,6 +3,9 @@ title: Virgil Roger
 date: 2021-07-15T12:09:52.579Z
 portrait: img/20180401_015_934ccdfea6.jpg
 exhibitions:
+  - place: Au Point Nommé, Lyon
+    date: "2021"
+    label: Silhouettes Lyonnaises
   - place: Poltred, Lyon
     date: 2020
     label: One Roll n°2 /
@@ -46,7 +49,7 @@ publications:
     date: "2020"
   - medium: "Grainzilla : Every single grain counts"
     date: "2021"
-  - medium: Nowhere Fast
+  - medium: 'Nowhere Fast #6 : "Carnet de Voyage"'
     date: "2021"
     label: '"Carnet de Voyage" '
 ---
