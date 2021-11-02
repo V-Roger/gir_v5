@@ -5,7 +5,7 @@ portrait: img/20180401_015_934ccdfea6.jpg
 exhibitions:
   - place: Au Point Nommé, Lyon
     date: "2021"
-    label: Silhouettes Lyonnaises
+    label: Silhouettes Lyonnaises /
   - place: Poltred, Lyon
     date: 2020
     label: One Roll n°2 /
