@@ -43,23 +43,8 @@ export default function Home({ galleries, url }: { galleries: { slug: string, ti
               </Link>            
             </li>
             <li>
-              <a href="https://www.patreon.com/virgil_roger" title="Soutenir Virgil Roger sur Patreon" rel="noreferrer" target="_blank">
-                Patreon
-              </a>
-            </li>
-            <li>
               <a href="https://shop.virgil-roger.photography" title="Acheter des oeuvres de Virgil Roger" rel="noreferrer" target="_blank">
                 Boutique
-              </a>
-            </li>
-            <li>
-              <a href="https://15negatives.com" title="15 Negatives : Darkroom Prints direct from the photographer" rel="noreferrer" target="_blank">
-                15Negatives
-              </a>            
-            </li>
-            <li>
-              <a href="https://wepush.photo" title="Collectif PUSH" rel="noreferrer" target="_blank">
-                Collectif PUSH
               </a>
             </li>
           </ul>
@@ -71,6 +56,7 @@ export default function Home({ galleries, url }: { galleries: { slug: string, ti
                     { gallery.title }
                   </Link>
                 </li>)
+                
               }
             </ul>
           </PerfectScrollbar>
