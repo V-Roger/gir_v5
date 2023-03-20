@@ -3,6 +3,9 @@ title: Virgil Roger
 date: 2021-07-15T12:09:52.579Z
 portrait: img/20180401_015_934ccdfea6.jpg
 exhibitions:
+  - place: Le Shrubbery, Villeurbanne
+    date: "2023"
+    label: Silhouettes Lyonnaises & Beaujolais Bleu /
   - place: Au Point Nommé, Lyon
     date: "2021"
     label: Silhouettes Lyonnaises /
